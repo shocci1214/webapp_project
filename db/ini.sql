@@ -18,7 +18,7 @@ CREATE USER testU IDENTIFIED BY 'testP';
 GRANT ALL PRIVILEGES ON emp_sys_db.* TO testU;
 
 /* AUTOCOMMITモードを解除 */
--- SET AUTOCOMMIT=0;
+SET AUTOCOMMIT=0;
 
 /* DB選択 */
 USE emp_sys_db;
