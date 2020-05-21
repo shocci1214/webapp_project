@@ -1,8 +1,9 @@
 /**
  *  ini.sql
- *  データベース初期化
- *  DBviewerで投入すると文字化けするので、
- *  コマンドプロンプトで実行する >  source C:\java_web_project_workspace\WebApp_Project1\db\ini.sql
+ *  データベースの初期化をするファイルです。
+ *  DBviewerを使ってMySQLへ投入すると文字化けするので、
+ * 　コマンドプロンプトで以下を実行してください
+ *  >  source C:\java_web_project_workspace\WebApp_Project\db\ini.sql
  *  作成者: Shohei Yamamoto
  */
 

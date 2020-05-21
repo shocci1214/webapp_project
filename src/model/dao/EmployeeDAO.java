@@ -19,7 +19,7 @@ import model.entity.EmployeeBean;
  */
 public class EmployeeDAO {
     /**
-     * すべての従業員のリストを返します。
+     * すべての従業員のリストを部署名付きで返します。
      * @return 従業員のリスト
      * @throws SQLException
      * @throws ClassNotFoundException
@@ -29,7 +29,9 @@ public class EmployeeDAO {
         // 従業員のリスト
         List<EmployeeBean> employeeList = new ArrayList<EmployeeBean>();
         // 実行するSQL文
-        String sql = "SELECT * FROM m_employee";
+        String sql = "SELECT * FROM m_employee me "
+                + "INNER JOIN m_section ms "
+                + "ON me.section_code = ms.section_code";
 
         // データベースへの接続
         try (Connection con = ConnectionManager.getConnection();
@@ -48,7 +50,7 @@ public class EmployeeDAO {
                 employee.setFirstKanaName(res.getString("first_kana_name"));
                 employee.setGender(res.getInt("gender"));
                 employee.setBirthDay(res.getString("birth_day"));
-                employee.setSectionCode(res.getString("section_code"));
+                employee.setSectionName(res.getString("section_name"));
                 employee.setHireDate(res.getString("hire_date"));
                 employee.setUpdateDateTime(res.getString("update_datetime"));
 

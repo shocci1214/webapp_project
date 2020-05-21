@@ -25,16 +25,16 @@
       <th>氏名</th>
       <th>氏名かな</th>
       <th>性別</th>
-      <th>部署コード</th>
+      <th>部署名</th>
     </tr>
 
     <%
         for (EmployeeBean employee : employeeList) {
     %>
     <tr>
-      <td><%=employee.getEmployeeCode() %></td>
-      <td><%=employee.getLastName() %> <%=employee.getFirstName() %></td>
-      <td><%=employee.getLastKanaName() %> <%=employee.getFirstKanaName() %></td>
+      <td><%=employee.getEmployeeCode()%></td>
+      <td><%=employee.getLastName()%> <%=employee.getFirstName()%></td>
+      <td><%=employee.getLastKanaName()%> <%=employee.getFirstKanaName()%></td>
       <%
           if (employee.getGender() == 1) {
       %>
@@ -46,7 +46,9 @@
       <%
           }
       %>
-      <td></td>
+      <td><%=employee.getSectionName()%></td>
+      <td><a href="#">編集</a></td>
+      <td><a href="#">削除</a></td>
     </tr>
     <%
         }
